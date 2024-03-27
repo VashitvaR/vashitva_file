@@ -1,0 +1,14 @@
+streamlit
+PyPDF2
+
+pdfplumber
+pandas
+scikit-learn
+
+langchain
+openai
+
+
+
+
+
