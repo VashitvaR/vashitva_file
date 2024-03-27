@@ -7,11 +7,8 @@ from dotenv import load_dotenv
 # Load environment variables from .env file
 load_dotenv()
 
-
-
 # Initialize OpenAI API client with your API key
 openai.api_key = os.getenv("OPENAI_API_KEY")
-
 
 # Define the function to extract text from PDF
 def extract_text(feed):
@@ -46,7 +43,7 @@ def generate_summary(text):
             prompt=(f"Please summarize the following text:\n{chunk}\n\nSummary:"),
             temperature=0.5,
             max_tokens=1024,
-            n = 1,
+            n=1,
             stop=None
         )
         summary = response.choices[0].text.strip()
@@ -60,9 +57,17 @@ uploaded_file = st.file_uploader('Choose your .pdf file', type="pdf")
 
 if uploaded_file is not None:
     extracted_text = extract_text(uploaded_file)
-   
+    
     st.subheader("Summarized Text:")
     summarized_text = generate_summary(extracted_text)
     st.text(summarized_text)
 else:
     st.write("No text found in the PDF file.")
+
+# Accessing secrets using the appropriate dictionary keys
+this_secret = st.secrets['this']
+that_secret = st.secrets['secrets']['that']
+
+# Displaying the secrets
+st.write(f"Secret 'this': {this_secret}")
+st.write(f"Secret 'that': {that_secret}")
