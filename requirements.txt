@@ -7,7 +7,7 @@ scikit-learn
 
 langchain
 openai
-dotenv 
+python-dotenv 
 
 
 
