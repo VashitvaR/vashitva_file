@@ -64,10 +64,3 @@ if uploaded_file is not None:
 else:
     st.write("No text found in the PDF file.")
 
-# Accessing secrets using the appropriate dictionary keys
-this_secret = st.secrets['this']
-that_secret = st.secrets['secrets']['that']
-
-# Displaying the secrets
-st.write(f"Secret 'this': {this_secret}")
-st.write(f"Secret 'that': {that_secret}")
