@@ -1,12 +1,14 @@
-streamlit
+
+streamlit>=1.28
+
+openai>=1.2
 PyPDF2
 
 pdfplumber
 pandas
 scikit-learn
 
-langchain
-openai==0.28
+
 python-dotenv 
 
 
